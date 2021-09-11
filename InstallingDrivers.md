@@ -95,7 +95,7 @@ To install support for Vulkan API  (will be functional only if you have a [Vulka
 
 _Note: Only Skylake, Kaby Lake, and Coffee Lake offer full Vulkan support. Broadwell, Haswell and Ivy Bridge only offer partial support, which may not work with a lot of games. Sandy Bridge and older lack any Vulkan support whatsoever._
 
-## Fedora (Incomplete Guide)
+## Fedora
 *Note: Dnf will pull most, if not all, AMD/Intel drivers with an install of Lutris, Wine, and/or Steam. Unless on an NVIDIA card, the following guide may be redundant.*
 
 To install support for Vulkan API (will be functional only if you have a [Vulkan capable GPU](https://en.wikipedia.org/wiki/Vulkan_(API)#Compatibility) and driver), execute following command:
@@ -124,6 +124,8 @@ After the reboot, verify the addition of the repository via the following comman
 
     sudo dnf repository-packages rpmfusion-nonfree-nvidia-driver info
 If several NVIDIA drivers are loaded, you are good to go. Finally, login, connect to the internet, and open the software app. Click _Add-ons> Hardware Drivers> NVIDIA Linux Graphics Driver> Install._
+Or alternatively you can put in this command in the terminal to finally install the drivers:
+    sudo dnf install nvidia-drivers
 
 If you’re using an older GPU or plan to use multiple GPUs, check  [the RPMFusion guide](https://rpmfusion.org/Howto/NVIDIA?highlight=%28CategoryHowto%29)  for further instructions. Finally, to ensure a successful reboot, set “WaylandEnable=false” in  _/etc/gdm/custom.conf_, and make sure to avoid using secure boot.
 
